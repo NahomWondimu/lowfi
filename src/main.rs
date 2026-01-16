@@ -2,7 +2,6 @@
 
 use crate::player::Player;
 use clap::{Parser, Subcommand};
-use eyre::Ok;
 use std::path::PathBuf;
 
 pub mod audio;
@@ -110,7 +109,7 @@ pub fn env(name: &str) -> bool {
 pub fn data_dir() -> crate::Result<PathBuf> {
     let dir = dirs::data_dir().unwrap().join("lowfi");
 
-    std::result::Result::Ok(dir)
+    Ok(dir)
 }
 
 /// Program entry point.
